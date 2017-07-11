@@ -68,3 +68,7 @@ height: 100%;
   background-color: #010101;
   color: #D9AB22;
 }
+
+.guitar, .bass, .drums, .vocals {
+  display: none;
+}
