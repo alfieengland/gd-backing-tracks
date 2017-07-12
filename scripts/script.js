@@ -68,10 +68,12 @@ $(document).ready(function() {
         vocals = false;
         console.log("vocals = false");
         $("#btnVocals").css("background-color", "#F728B4");
+        $(".vocals").css("display", "none");
       } else if (vocals==false) {
         vocals = true;
         console.log("vocals = true");
         $("#btnVocals").css("background-color", "#dd089a");
+        $(".vocals").css("display", "block");
       }
     }
 
