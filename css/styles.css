@@ -14,6 +14,7 @@ height: 100%;
 /* End of CSS Reset */
 
 .instruments,
+.backing-tracks,
 .albums {
   width: 100vw;
   -webkit-touch-callout: none;
@@ -25,6 +26,7 @@ height: 100%;
 }
 
 .instruments ul,
+.backing-tracks ul,
 .albums ul {
   display: flex;
   justify-content: space-around;
@@ -32,6 +34,7 @@ height: 100%;
 }
 
 .instruments ul li,
+.backing-tracks ul li,
 .albums ul li {
   height: 5vh;
   display: flex;
@@ -41,7 +44,8 @@ height: 100%;
   justify-content: space-around;
 }
 
-.instruments li {
+.instruments li,
+.backing-tracks li {
   background-color: #F728B4;
 }
 

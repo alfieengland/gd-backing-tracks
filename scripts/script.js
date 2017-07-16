@@ -77,6 +77,70 @@ $(document).ready(function() {
       }
     }
 
+    /* Backing Track Toggle Buttons */
+    var guitarBacking = false;
+    $("#btnGuitarBacking").click(function(){
+      $.fn.fnGuitarBacking();
+    });
+
+    var bassBacking = false;
+    $("#btnBassBacking").click(function(){
+      $.fn.fnBassBacking();
+    });
+
+    var drumBacking = false;
+    $("#btnDrumBacking").click(function(){
+      $.fn.fnDrumBacking();
+    });
+
+    var instrumental = false;
+    $("#btnInstrumental").click(function(){
+      $.fn.fnInstrumental();
+    });
+
+    /* Backing Track Functions */
+    $.fn.fnGuitarBacking = function(){
+      if (guitarBacking==true) {
+        guitarBacking = false;
+        console.log("guitarBacking = false");
+        $("#btnGuitarBacking").css("background-color", "#F728B4");
+        $(".guitarBacking").css("display", "none");
+      } else if (guitarBacking==false) {
+        guitarBacking = true;
+        console.log("guitarBacking = true");
+        $("#btnGuitarBacking").css("background-color", "#dd089a");
+        $(".guitarBacking").css("display", "block");
+      }
+    }
+
+    $.fn.fnBassBacking = function(){
+      if (bassBacking==true) {
+        bassBacking = false;
+        console.log("bassBacking = false");
+        $("#btnBassBacking").css("background-color", "#F728B4");
+        $(".bassBacking").css("display", "none");
+      } else if (bassBacking==false) {
+        bassBacking = true;
+        console.log("bassBacking = true");
+        $("#btnBassBacking").css("background-color", "#dd089a");
+        $(".bassBacking").css("display", "block");
+      }
+    }
+
+    $.fn.fnDrumBacking = function(){
+      if (drumBacking==true) {
+        drumBacking = false;
+        console.log("drumBacking = false");
+        $("#btnDrumBacking").css("background-color", "#F728B4");
+        $(".drumBacking").css("display", "none");
+      } else if (drumBacking==false) {
+        drumBacking = true;
+        console.log("drumBacking = true");
+        $("#btnDrumBacking").css("background-color", "#dd089a");
+        $(".drumBacking").css("display", "block");
+      }
+    }
+
     /* Album Toggle Buttons */
     var americanIdiot = false;
     $("#btnAmericanIdiot").click(function(){
