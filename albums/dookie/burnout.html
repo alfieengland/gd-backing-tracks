@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Burnout</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../css/eric-meyer.css">
+    <link rel="stylesheet" type="text/css" href="../../css/ungrid.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col">
+        <p>Drums</p>
+        <audio id="burnout-kick" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1A6-BW1T3LFnI2r0E7IDwONO5i1qMIz-a" type="audio/ogg" />
+        </audio><br/>
+        <audio id="burnout-snare" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1pa3q3CyyuO_lwS6ZsWYmTNeVnIsen918" type="audio/ogg" />
+        </audio><br/>
+        <audio id="burnout-cymbals" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1Tj88iK4Eq9jj34kwFfsnP5uPeeDaiY7Y" type="audio/ogg" />
+        </audio><br/>
+      </div>
+      <div class="col">
+        <p>Guitar</p>
+      </div>
+      <div class="col">
+        <p>Bass</p>
+      </div>
+      <div class="col">
+        <p>Vocals</p>
+      </div>
+      <div class="col">
+        <p>Other</p>
+      </div>
+      <div class="col">
+        <p></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p></p>
+      </div>
+      <div class="col">
+        <p></p>
+      </div>
+    </div>
+
+    <button onclick="play();">Play</button><br />
+
+    <script type="text/javascript">
+    var play = function() {
+      var audio1 = document.getElementById('burnout-kick');
+      var audio2 = document.getElementById('burnout-snare');
+      var audio3 = document.getElementById('burnout-cymbals');
+      audio1.play(); // this stream will immediately stop when the next line is run on iOS
+      audio2.play(); // this will stop audio1 on iOS
+      audio3.play();
+    }
+    </script>
+
+  </body>
+</html>

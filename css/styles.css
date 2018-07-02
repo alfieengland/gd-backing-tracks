@@ -1,78 +1,63 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300);
 
-/* Start of CSS Reset */
+@font-face {
+  font-family: 'DirtyHeadline';
+  src: url('../fonts/DirtyHeadline.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'fontbreakdown';
+  src: url('../fonts/fontbreakdown.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TrixiePlain';
+  src: url('../fonts/TrixiePlain.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'KenaOpenFaceDisplaySSi';
+  src: url('../fonts/KenaOpenFaceDisplaySSi.woff') format('woff');
+}
+
 * {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
+  font-weight: lighter;
 }
 
-body, html {
-height: 100%;
-}
-/* End of CSS Reset */
-
-.instruments,
-.backing-tracks,
-.albums {
-  width: 100vw;
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+.album,
+.song {
+  text-align: center;
+  background-color: #999;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
 }
 
-.instruments ul,
-.backing-tracks ul,
-.albums ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
+.american-idiot {
+  font-family: 'DirtyHeadline', sans-serif;
+  font-size: 310%;
 }
 
-.instruments ul li,
-.backing-tracks ul li,
-.albums ul li {
-  height: 5vh;
-  display: flex;
-  align-items: center;
-  /*flex-grow: 1;*/
-  width: 25vw;
-  justify-content: space-around;
+.century-breakdown {
+  font-family: 'fontbreakdown', sans-serif;
+  font-size: 240%;
 }
 
-.instruments li,
-.backing-tracks li {
-  background-color: #F728B4;
+.dookie {
+  font-family: 'TrixiePlain', sans-serif;
+  font-size: 340%;
 }
 
-.albums ul {
-  background-color: ;
+.dookie-songs {
+  font-family: 'TrixiePlain', sans-serif;
+  font-size: 200%;
 }
 
-#btnAmericanIdiot {
-  background-color: #000000;
-  color: white;
+.other {
+  font-family: 'KenaOpenFaceDisplaySSi', sans-serif;
+  font-size: 310%;
 }
 
-#btnDookie {
-  background-color: #DAE4EE;
-  color: #C6A617;
-}
+.album-row {
 
-#btnWarning {
-  background-color: #E1E0DE;
-  color: #9BAD0B;
-}
-
-#btn21stCentury {
-  background-color: #010101;
-  color: #D9AB22;
-}
-
-.guitar, .bass, .drums, .vocals, .americanIdiot, .dookie {
-  display: none;
 }
