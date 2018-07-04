@@ -11,27 +11,40 @@
     <div class="row">
       <div class="col">
         <p>Drums</p>
-        <audio id="burnout-kick" controls>
+        <audio class="audio" controls>
           <source src="https://drive.google.com/uc?export=download&id=1A6-BW1T3LFnI2r0E7IDwONO5i1qMIz-a" type="audio/ogg" />
         </audio><br/>
-        <audio id="burnout-snare" controls>
+        <audio class="audio" controls>
           <source src="https://drive.google.com/uc?export=download&id=1pa3q3CyyuO_lwS6ZsWYmTNeVnIsen918" type="audio/ogg" />
         </audio><br/>
-        <audio id="burnout-cymbals" controls>
+        <audio class="audio" controls>
           <source src="https://drive.google.com/uc?export=download&id=1Tj88iK4Eq9jj34kwFfsnP5uPeeDaiY7Y" type="audio/ogg" />
         </audio><br/>
       </div>
       <div class="col">
         <p>Guitar</p>
+        <audio class="audio" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1dwAIINTU-BFY6AiOGZkzaiyr3gUV-MIJ" type="audio/ogg" />
+        </audio><br/>
+        <button id="gButton" class="button buttonOff" onclick="gMute();">Guitar</button><br/>
       </div>
       <div class="col">
         <p>Bass</p>
+        <audio class="audio" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1fc92UzON4rEDLd471vz8b1Zg2RRnlRCk" type="audio/ogg" />
+        </audio><br/>
       </div>
       <div class="col">
         <p>Vocals</p>
+        <audio class="audio" controls>
+          <source src="https://drive.google.com/uc?export=download&id=1xECnT7g496reZr5JcP4ctStKkBUlXnIQ" type="audio/ogg" />
+        </audio><br/>
       </div>
       <div class="col">
         <p>Other</p>
+        <audio class="audio" controls="controls">
+          <source src="https://drive.google.com/uc?export=download&id=108bliNxzoiAnMpd3xbcbYwr7A_aDf3iK" type="audio/ogg" />
+        </audio><br/>
       </div>
       <div class="col">
         <p></p>
@@ -46,18 +59,40 @@
       </div>
     </div>
 
-    <button onclick="play();">Play</button><br />
+    <button id="pButton" class="button play buttonOff" onclick="play();"></button><br/>
 
     <script type="text/javascript">
     var play = function() {
-      var audio1 = document.getElementById('burnout-kick');
-      var audio2 = document.getElementById('burnout-snare');
-      var audio3 = document.getElementById('burnout-cymbals');
-      audio1.play(); // this stream will immediately stop when the next line is run on iOS
-      audio2.play(); // this will stop audio1 on iOS
-      audio3.play();
+      var audio = document.getElementsByClassName('audio');
+      if (audio[0].paused) {
+        for (var i = 0; i < audio.length; i++) {
+          audio[i].play();
+        }
+        pButton.className = "";
+        pButton.className = "button pause buttonOff";
+      } else {
+        for (var i = 0; i < audio.length; i++) {
+          audio[i].pause();
+        }
+        pButton.className = "";
+        pButton.className = "button play buttonOn";
+      }
+    }
+
+    var gMute = function() {
+      var audio = document.getElementsByClassName('audio');
+      if (audio[3].muted == true) {
+        audio[3].muted = false
+        gButton.className = "";
+        gButton.className = "button buttonOff";
+      } else {
+        audio[3].muted = true;
+        gButton.className = "";
+        gButton.className = "button buttonOn";
+      }
     }
     </script>
+
 
   </body>
 </html>
