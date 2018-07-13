@@ -10,18 +10,18 @@
   <body>
     <div class="row album-row">
       <div class="col album century-breakdown">
-        <h1>21st century breakdown</h1>
+        <a href="album.php?album=21st-century-breakdown"><h1>21st century breakdown</h1></a>
       </div>
       <div class="col album american-idiot">
-        <h1>American Idiot</h1>
+        <a href="album.php?album=american-idiot"><h1>American Idiot</h1></a>
       </div>
     </div>
     <div class="row">
       <div class="col album dookie">
-        <a href="albums/dookie.html"><h1>Dookie</h1></a>
+        <a href="album.php?album=dookie"><h1>Dookie</h1></a>
       </div>
       <div class="col album other">
-        <h1>Other</h1>
+        <a href="album.php?album=other"><h1>Other</h1></a>
       </div>
     </div>
   </body>
