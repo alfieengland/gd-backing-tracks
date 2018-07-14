@@ -13,14 +13,13 @@
       $album = $_GET['album'];
       $song = $_GET['song'];
       $dir = "gd-multitrack/" . $album . "/" . $song;
-      echo $dir;
-      $files = scandir($dir);
+      $files = preg_grep('/^([^.])/', scandir($dir));
       $titles = array("Drums", "", "", "Bass", "Guitar", "Vocals", "Additional");
       ?>
-
       <div class="row">
-        <div class="col">
-          <?php foreach ($files as $value) {
+          <?php
+          $i = 0;
+          foreach ($files as $value) {
             echo "<div class='col'>";
             if ($value == "01-kick-drum") {
               echo "<p>Drums</p>";
@@ -38,23 +37,29 @@
                 <source src='gd-multitrack/" . $album . "/" . $song . "/" . $value . "' type='audio/ogg' />
               </audio><br/>
             ";
+
+            echo "<button id='track" . $i .  "Button' class='button buttonOff' onclick='track" . $i . "Mute();''>" . $i . "</button><br/>";
+            echo "
+            <script type='text/javascript'>
+            var track" . $i . "Mute = function() {
+              var audio = document.getElementsByClassName('audio');
+                if (audio[" . $i . "].muted == true) {
+                  audio[" . $i . "].muted = false;
+                  track" . $i .  "Button.className = '';
+                  track" . $i .  "Button.className = 'button buttonOff';
+                } else {
+                  audio[" . $i . "].muted = true;
+                  track" . $i .  "Button.className = '';
+                  track" . $i .  "Button.className = 'button buttonOn';
+                }
+            }
+            </script>
+            ";
             echo "</div>";
+            $i++;
           } ?>
-        </div>
-        <div class="col">
-          <p>Guitar</p>
-          <button id="gButton" class="button buttonOff" onclick="gMute();">Guitar</button><br/>
-        </div>
-        <div class="col">
-          <p>Bass</p>
-        </div>
-        <div class="col">
-          <p>Vocals</p>
-        </div>
-        <div class="col">
-          <p>Other</p>
-        </div>
       </div>
+      <div class="row spacer"></div>
       <div class="row">
         <div class="col">
           <button id="pButton" class="button play buttonOff" onclick="play();"></button><br/>
@@ -76,19 +81,6 @@
           }
           pButton.className = "";
           pButton.className = "button play buttonOn";
-        }
-      }
-
-      var gMute = function() {
-        var audio = document.getElementsByClassName('audio');
-        if (audio[3].muted == true) {
-          audio[3].muted = false
-          gButton.className = "";
-          gButton.className = "button buttonOff";
-        } else {
-          audio[3].muted = true;
-          gButton.className = "";
-          gButton.className = "button buttonOn";
         }
       }
       </script>

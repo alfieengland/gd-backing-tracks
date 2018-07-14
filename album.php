@@ -22,11 +22,21 @@
 
       foreach ($songs as $value) {
         echo "<div class='row album-row'>";
-        echo "<div class='col song'>";
+        echo "<div class='col song ";
+        if ($_GET['album'] == "21st-century-breakdown") {
+          echo "century-breakdown-songs";
+        } elseif ($_GET['album'] == "american-idiot") {
+          echo "american-idiot-songs";
+        } elseif ($_GET['album'] == "dookie") {
+          echo "dookie-songs";
+        } else {
+          echo "other-songs";
+        }
+        echo "'>";
         echo "<a href='song.php?album=" . $_GET['album'] . "&song=" . $value . "'><h1>" . $value . "</h1></a>";
         echo "</div>";
         echo "<div class='col song'>";
-        echo "<h1>" . $value . "</h1>";
+        // echo "<h1>" . $value . "</h1>";
         echo "</div>";
         echo "</div>";
       }

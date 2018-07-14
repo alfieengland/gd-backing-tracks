@@ -38,9 +38,19 @@
   font-size: 310%;
 }
 
+.american-idiot-songs {
+  font-family: 'DirtyHeadline', sans-serif;
+  font-size: 210%;
+}
+
 .century-breakdown {
   font-family: 'fontbreakdown', sans-serif;
   font-size: 240%;
+}
+
+.century-breakdown-songs {
+  font-family: 'fontbreakdown', sans-serif;
+  font-size: 170%;
 }
 
 .dookie {
@@ -58,13 +68,18 @@
   font-size: 310%;
 }
 
+.other-songs {
+  font-family: 'KenaOpenFaceDisplaySSi', sans-serif;
+  font-size: 220%;
+}
+
 .audio {
   display: none;
 }
 
 .button {
   height: 200px;
-  width: 200px;
+  width: 100%;
   border: none;
   background-color: #555;
   background-size: 50% 50%;
@@ -80,11 +95,11 @@
 }
 
 .buttonOff {
-  background-color: #888;
+  background-color: #999;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .buttonOn {
-  background-color: #999;
+  background-color: #444;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
