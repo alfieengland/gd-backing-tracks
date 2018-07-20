@@ -20,8 +20,10 @@
         $songs = array("brain-stew", "geek-stink-breath", "hitchin-a-ride", "minority", "nice-guys-finish-last", "time-of-your-life", "warning");
       }
 
+      echo "<div class='row album-row'>";
+      $i = 0;
       foreach ($songs as $value) {
-        echo "<div class='row album-row'>";
+
         echo "<div class='col song ";
         if ($_GET['album'] == "21st-century-breakdown") {
           echo "century-breakdown-songs";
@@ -33,12 +35,13 @@
           echo "other-songs";
         }
         echo "'>";
-        echo "<a href='song.php?album=" . $_GET['album'] . "&song=" . $value . "'><h1>" . $value . "</h1></a>";
+        echo "<a class='songLink' href='song.php?album=" . $_GET['album'] . "&song=" . $value . "'><h1>" . $value . "</h1></a>";
         echo "</div>";
-        echo "<div class='col song'>";
-        // echo "<h1>" . $value . "</h1>";
-        echo "</div>";
-        echo "</div>";
+        $i++;
+        if ($i % 2 == 0 && $i != count ($songs)) {
+          echo "</div>";
+          echo "<div class='row album-row'>";
+        }
       }
       ?>
     </div>
